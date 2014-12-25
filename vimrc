@@ -31,15 +31,20 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" Enable syntax highlighting
 syntax on
+
+" Enable python-friendly indenting
 set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" Show line numbers
 set number
+
+" Enable airline immediately
 set laststatus=2
 
+" Custom keymapping
 map <C-e> :NERDTreeToggle<CR>
-let g:airline#extensions#tabline#enabled = 1
-
-execute pathogen#infect()
