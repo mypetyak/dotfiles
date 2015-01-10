@@ -15,6 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
 "Plugin 'bling/vim-bufferline'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,3 +49,9 @@ set laststatus=2
 
 " Custom keymapping
 map <C-e> :NERDTreeToggle<CR>
+
+" Enable airline
+let g:airline#extensions#tabline#enabled = 1
+
+" Hide .pyc files in NERDtree
+let NERDTreeIgnore = ['\.pyc$']
