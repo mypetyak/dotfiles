@@ -16,6 +16,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
+Plugin 'fatih/vim-go'
 "Plugin 'bling/vim-bufferline'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
