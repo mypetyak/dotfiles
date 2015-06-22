@@ -17,6 +17,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'fatih/vim-go'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
 "Plugin 'bling/vim-bufferline'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,6 +44,8 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+set backspace=2
 
 " Show line numbers
 set number
