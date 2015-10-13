@@ -19,6 +19,7 @@ Plugin 'bling/vim-airline'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'derekwyatt/vim-scala'
 
 "Plugin 'bling/vim-bufferline'
 " All of your Plugins must be added before the following line
