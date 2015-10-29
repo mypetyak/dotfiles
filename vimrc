@@ -106,3 +106,6 @@ let NERDTreeIgnore = ['\.pyc$']
 
 " Hide gundo after reverting
 let g:gundo_close_on_revert = 1
+
+" Disable vim-markdown's default folding
+let g:vim_markdown_folding_disabled=1
