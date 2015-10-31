@@ -93,6 +93,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <leader>u :GundoToggle<CR>
+nnoremap <leader><space>  :noh<CR>
 
 " ----- Plugin Config -----
 
