@@ -94,6 +94,9 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader><space>  :noh<CR>
+" Allow j and k to navigate wrapped lines with sanity
+nnoremap j gj
+nnoremap k gk
 
 " ----- Plugin Config -----
 
