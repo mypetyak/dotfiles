@@ -20,6 +20,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-bufferline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sjl/gundo.vim'
+Plugin 'chriskempson/base16-vim'
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required to enable Plugin-based indenting
@@ -56,6 +57,8 @@ set wildmenu
 set wildmode=list:longest,full
 set visualbell
 set cursorline
+colorscheme base16-eighties
+set background=dark
 
 " Visual padding onsearch results
 set scrolloff=3 
@@ -81,7 +84,6 @@ set wrap
 set textwidth=79
 "set colorcolumn=85
 
-
 " Custom keymapping
 map <C-e> :NERDTreeToggle<CR>   " Toggle nerd tree with ctrl+e
 nnoremap ; :
@@ -98,10 +100,14 @@ nnoremap <leader><space>  :noh<CR>
 nnoremap j gj
 nnoremap k gk
 
+" Turn on spelling highlighting for markdown
+autocmd BufRead,BufNewFile *.markdown setlocal spell
+
 " ----- Plugin Config -----
 
 " Enable airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 " Enable airline immediately
 set laststatus=2
 
