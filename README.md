@@ -29,7 +29,9 @@ tabs-as-spaces, diagnostic info via vim-airline, and more.
 Provides theming and plugin support.
 
 ## Installation Details
-1. Symlink to zsh config file and oh-my-zsh directory
+1. Symlink to zsh config file and oh-my-zsh theme file
 
         ln -s dotfiles/.zshrc ~/.zshrc
-        ln -s dotfiles/.oh-my-zsh ~/.oh-my-zsh
+        mkdir -p ~/.oh-my-zsh/themes/
+        ln -s dotfiles/.oh-my-zsh/themes/bunn.zsh-theme
+        ~/.oh-my-zsh/themes/bunn.zsh-theme
