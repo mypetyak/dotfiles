@@ -33,5 +33,4 @@ Provides theming and plugin support.
 
         ln -s "$PWD"/dotfiles/.zshrc ~/.zshrc
         mkdir -p ~/.oh-my-zsh/themes/
-        ln -s "$PWD"/dotfiles/.oh-my-zsh/themes/bunn.zsh-theme
-        ~/.oh-my-zsh/themes/bunn.zsh-theme
+        ln -s "$PWD"/dotfiles/.oh-my-zsh/themes/bunn.zsh-theme ~/.oh-my-zsh/themes/bunn.zsh-theme
