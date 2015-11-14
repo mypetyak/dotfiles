@@ -29,8 +29,17 @@ tabs-as-spaces, diagnostic info via vim-airline, and more.
 Provides theming and plugin support.
 
 ## Installation Details
-1. Symlink to zsh config file and oh-my-zsh theme file
+Symlink to zsh config file and oh-my-zsh theme file
 
         ln -s "$PWD"/dotfiles/.zshrc ~/.zshrc
         mkdir -p ~/.oh-my-zsh/themes/
         ln -s "$PWD"/dotfiles/.oh-my-zsh/themes/bunn.zsh-theme ~/.oh-my-zsh/themes/bunn.zsh-theme
+
+# Git
+
+Allows for portable gitconfig include file
+
+## Installation Details
+Include .gitconfig_include inside your .gitconfig file. Do this only one time.
+
+       printf "[include]\n    path = %s/dotfiles/.gitconfig_include" "$PWD" >> ~/.gitconfig
