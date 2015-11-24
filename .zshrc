@@ -49,7 +49,7 @@ ZSH_THEME="bunn"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws brew docker git pip python vagrant history)
+plugins=(aws brew docker git pip python vagrant history history-substring-search)
 
 # User configuration
 
