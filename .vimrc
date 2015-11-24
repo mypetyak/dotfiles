@@ -81,7 +81,7 @@ set smartcase
 
 " Text wrapping
 set wrap
-set textwidth=79
+"set textwidth=79
 "set colorcolumn=85
 
 " Custom keymapping
@@ -102,6 +102,8 @@ nnoremap k gk
 
 " Turn on spelling highlighting for markdown
 autocmd BufRead,BufNewFile *.markdown setlocal spell
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.txt setlocal spell
 
 " ----- Plugin Config -----
 
