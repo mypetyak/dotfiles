@@ -43,3 +43,12 @@ Allows for portable gitconfig include file
 Include .gitconfig_include inside your .gitconfig file. Do this only one time.
 
     printf "[include]\n    path = %s/dotfiles/.gitconfig_include" "$PWD" >> ~/.gitconfig
+
+# Homebrew
+
+Installs apps on OSX via Homebrew package manager.
+
+## Installation Details
+Simply run the brew.sh script.
+
+    ./brew.sh
