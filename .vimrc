@@ -57,7 +57,7 @@ set wildmenu
 set wildmode=list:longest,full
 set visualbell
 set cursorline
-colorscheme base16-eighties
+silent! colorscheme base16-eighties
 set background=dark
 
 " Visual padding onsearch results
