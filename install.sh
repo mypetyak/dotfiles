@@ -15,7 +15,9 @@ if [ ! -d "dotfiles" ]; then
 fi
 
 # ----- VIM -----
-mv ~/.vimrc ~/.vimrc_$(date -d "today" +"%Y%m%d%H%M")
+if [ -f "`eval echo ~/.vimrc`" ]; then
+    mv ~/.vimrc ~/.vimrc_$(date -d "today" +"%Y%m%d%H%M")
+fi
 ln -s "$PWD"/dotfiles/.vimrc ~/.vimrc
 if [ ! -d "`eval echo ~/.vim/bundle/Vundle.vim`" ]; then
     echo 
@@ -25,7 +27,9 @@ vim +PluginInstall +qall
 
 # ----- ZSH -----
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true
-mv ~/.zshrc ~/.zshrc_$(date -d "today" +"%Y%m%d%H%M")
+if [ -f "`eval echo ~/.zshrc`" ]; then
+    mv ~/.zshrc ~/.zshrc_$(date -d "today" +"%Y%m%d%H%M")
+fi
 ln -s "$PWD"/dotfiles/.zshrc ~/.zshrc
 mkdir -p ~/.oh-my-zsh/themes/
 if [ ! -f "`eval echo ~/.oh-my-zsh/themes/bunn.zsh-theme`" ]; then
