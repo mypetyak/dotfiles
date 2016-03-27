@@ -44,3 +44,9 @@ printf "[include]\n    path = %s/dotfiles/.gitconfig_include" "$PWD" >> ~/.gitco
 if [ $platform == 'osx' ]; then
 	./brew.sh
 fi
+
+# ----- CHEAT -----
+if [ -d "`eval echo ~/.cheat`" ]; then
+    mv ~/.cheat ~/.cheat_$(date -d "today" +"%Y%m%d%H%M")
+fi
+ln -s "$PWD"/dotfiles/.cheat ~/.cheat
