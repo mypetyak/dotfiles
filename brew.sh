@@ -22,6 +22,7 @@ brew install zsh
 
 brew tap caskroom/cask
 brew cask install betterzipql
+brew cask install google-chrome
 brew cask install nvalt
 brew cask install macdown
 brew cask install qlcolorcode
