@@ -10,7 +10,8 @@ Plugin 'gmarik/Vundle.vim'     " let Vundle manage Vundle, required
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -57,7 +58,8 @@ set wildmenu
 set wildmode=list:longest,full
 set visualbell
 set cursorline
-silent! colorscheme base16-eighties
+"silent! colorscheme base16-eighties
+silent! colorscheme base16-tomorrow
 set background=dark
 
 " Visual padding onsearch results
@@ -110,6 +112,9 @@ autocmd BufRead,BufNewFile *.txt setlocal spell
 " Enable airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'base16_tomorrow'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 " Enable airline immediately
 set laststatus=2
 
