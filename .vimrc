@@ -101,6 +101,9 @@ nnoremap <leader><space>  :noh<CR>
 " Allow j and k to navigate wrapped lines with sanity
 nnoremap j gj
 nnoremap k gk
+" Toggle buffers with ease
+nnoremap <Left> :bp<CR>
+nnoremap <Right> :bn<CR>
 
 " Turn on spelling highlighting for markdown
 autocmd BufRead,BufNewFile *.markdown setlocal spell
