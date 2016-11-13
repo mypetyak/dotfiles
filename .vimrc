@@ -22,6 +22,9 @@ Plugin 'bling/vim-bufferline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sjl/gundo.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'rodjek/vim-puppet'
+Plugin 'severin-lemaignan/vim-minimap'
+Plugin 'chriskempson/vim-tomorrow-theme'
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required to enable Plugin-based indenting
@@ -43,6 +46,9 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+" vim-go settings
+let g:go_auto_type_info = 1
+
 " Be specific about how backspace works
 set backspace=2
 
@@ -59,8 +65,9 @@ set wildmode=list:longest,full
 set visualbell
 set cursorline
 "silent! colorscheme base16-eighties
-silent! colorscheme base16-tomorrow
-set background=dark
+"silent! colorscheme base16-summerfruit-light
+silent! colorscheme Tomorrow-Night-Eighties
+set background=light
 
 " Visual padding onsearch results
 set scrolloff=3 
@@ -112,10 +119,14 @@ autocmd BufRead,BufNewFile *.txt setlocal spell
 
 " ----- Plugin Config -----
 
+"" Enable specific syntastic checkers
+"let g:syntastic_sh_checkers = ['shellcheck']
+
 " Enable airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'base16_tomorrow'
+"let g:airline_theme = 'base16_summerfruit'
+let g:airline_theme = 'base16_eighties'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 " Enable airline immediately
@@ -129,3 +140,9 @@ let g:gundo_close_on_revert = 1
 
 " Disable vim-markdown's default folding
 let g:vim_markdown_folding_disabled=1
+
+" go-vim settings
+let g:go_highlight_fields = 1
+let g:go_highlight_methods = 1
+
+let g:go_fmt_command = "goimports"
