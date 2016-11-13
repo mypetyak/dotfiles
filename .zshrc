@@ -82,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias tmux="SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock tmux"
+alias tmux="if [ ! -S $(readlink ~/.ssh/ssh_auth_sock) ]; then ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock; fi; SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock tmux"
 
 export EDITOR=vim
 export GOPATH="$HOME/gocode"
