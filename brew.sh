@@ -15,12 +15,15 @@ brew install nmap
 brew install p7zip
 brew install pigz
 brew install python
+brew install rsync
+brew install tmux
 brew install tree
 brew install vim --override-system-vi
 brew install wget --with-iri
 brew install zsh
 
 brew tap caskroom/cask
+brew cask install alfred
 brew cask install betterzipql
 brew cask install dash
 brew cask install google-chrome
