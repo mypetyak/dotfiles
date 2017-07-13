@@ -7,6 +7,8 @@ brew update
 
 brew upgrade --all
 
+brew install cheat
+brew install fasd
 brew install git
 brew install heroku-toolbelt
 brew install lastpass-cli --with-pinentry --with-doc
