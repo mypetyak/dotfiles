@@ -19,6 +19,7 @@ brew install pigz
 brew install python
 brew install python3
 brew install rsync
+brew install the_silver_searcher
 brew install tmux
 brew install tree
 brew install vim --override-system-vi
