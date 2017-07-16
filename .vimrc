@@ -23,8 +23,9 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'sjl/gundo.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'rodjek/vim-puppet'
-Plugin 'severin-lemaignan/vim-minimap'
-Plugin 'chriskempson/vim-tomorrow-theme'
+"Plugin 'severin-lemaignan/vim-minimap'
+"Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'ervandew/supertab'
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required to enable Plugin-based indenting
@@ -32,6 +33,9 @@ filetype plugin indent on    " required to enable Plugin-based indenting
 
 
 " ---- Native settings ----
+
+" Mouse scrolling
+set mouse=a
 
 " Enable syntax highlighting
 syntax on
@@ -47,7 +51,8 @@ set softtabstop=4
 set expandtab
 
 " vim-go settings
-let g:go_auto_type_info = 1
+let g:go_auto_type_info = 0
+let g:go_auto_sameids = 0
 
 " Be specific about how backspace works
 set backspace=2
@@ -64,10 +69,11 @@ set wildmenu
 set wildmode=list:longest,full
 set visualbell
 set cursorline
-"silent! colorscheme base16-eighties
+silent! colorscheme base16-eighties
 "silent! colorscheme base16-summerfruit-light
-silent! colorscheme Tomorrow-Night-Eighties
-set background=light
+"silent! colorscheme Tomorrow-Night-Eighties
+"silent! colorscheme base16-tomorrow-night
+set background=dark
 
 " Visual padding onsearch results
 set scrolloff=3 
@@ -116,6 +122,8 @@ nnoremap <Right> :bn<CR>
 autocmd BufRead,BufNewFile *.markdown setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.txt setlocal spell
+hi clear SpellBad
+hi SpellBad cterm=underline
 
 " ----- Plugin Config -----
 
@@ -144,5 +152,5 @@ let g:vim_markdown_folding_disabled=1
 " go-vim settings
 let g:go_highlight_fields = 1
 let g:go_highlight_methods = 1
-
 let g:go_fmt_command = "goimports"
+let g:go_autodetect_gopath = 0

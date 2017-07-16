@@ -83,6 +83,11 @@ fi
 # docker things
 alias devbox='docker run --rm -v $(pwd):/host -it bunn/devbox:latest /bin/bash'
 
+# assorted
+alias tools='open https://bunn.cc/tools'
+alias tree='tree -C'
+alias ls='ls -G'
+
 # golang
 export GOPATH="$HOME/gocode"
 export PATH="$PATH:$GOPATH/bin"
