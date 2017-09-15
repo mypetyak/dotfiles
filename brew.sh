@@ -8,6 +8,7 @@ brew update
 brew upgrade --all
 
 brew install automake
+brew install bash
 brew install cheat
 brew install delve
 brew install diff-so-fancy
