@@ -26,6 +26,7 @@ Plugin 'rodjek/vim-puppet'
 "Plugin 'severin-lemaignan/vim-minimap'
 "Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-eunuch'
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required to enable Plugin-based indenting

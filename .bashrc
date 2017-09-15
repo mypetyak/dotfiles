@@ -81,12 +81,14 @@ if command -v fasd &>/dev/null; then
 fi
 
 # docker things
-alias devbox='docker run --rm -v $(pwd):/host -it bunn/devbox:latest /bin/bash'
+alias devbox='docker run --rm -e TERM=screen-256color -v $(pwd):/host -it bunn/devbox:latest /bin/bash'
+alias devbox-norm='docker run -e TERM=screen-256color -v $(pwd):/host -it bunn/devbox:latest /bin/bash'
 
 # assorted
 alias tools='open https://bunn.cc/tools'
 alias tree='tree -C'
 alias ls='ls -G'
+alias gs='git status'
 
 # golang
 export GOPATH="$HOME/gocode"
