@@ -1,3 +1,5 @@
+[alias]
+    pretty = log --graph --abbrev-commit --pretty=format:'%h %s <%ae>'
 [color]
 	ui = auto
 [core]
