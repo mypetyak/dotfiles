@@ -11,18 +11,12 @@ fi
 
 suffix=$(date -d "today" +"%Y%m%d%H%M")
 
-# Clone source
-if [ ! -d "dotfiles" ]; then
-    git clone https://github.com/mypetyak/dotfiles.git
-fi
-
 # ----- VIM -----
 if [ -f ~/.vimrc ]; then
     mv ~/.vimrc ~/.vimrc_${suffix}
 fi
-ln -s dotfiles/.vimrc ~/.vimrc
+ln -s .vimrc ~/.vimrc
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-    echo 
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 vim +PluginInstall +qall
@@ -30,21 +24,22 @@ vim +GoInstallBinaries +qall
 
 # ----- GIT -----
 # TODO: this isn't idempotent
-printf "[include]\n    path = %s/dotfiles/.gitconfig_include" "$PWD" >> ~/.gitconfig
+printf "[include]\n    path = %s/.gitconfig_include" "$PWD" >> ~/.gitconfig
 
 # ----- TMUX -----
 if [ -f ~/.tmux.conf ]; then
     mv ~/.tmux.conf ~/.tmux.confg_${suffix}
 fi
-ln -s dotfiles/.tmux.conf ~/.tmux.conf
+ln -s .tmux.conf ~/.tmux.conf
 
 # ----- HOMEBREW -----
 if [ $platform == 'osx' ]; then
 	./brew.sh
+    ./iterm2.sh
 fi
 
 # ----- CHEAT -----
 if [ -d ~/.cheat ]; then
     mv ~/.cheat ~/.cheat_${suffix}
 fi
-ln -s dotfiles/.cheat ~/.cheat
+ln -s .cheat ~/.cheat

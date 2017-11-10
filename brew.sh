@@ -20,12 +20,12 @@ brew install gnu-sed
 brew install go
 brew install grep
 #brew install heroku-toolbelt
-brew install hugo
+#brew install hugo
 brew install htop
 brew install jq
 brew install lastpass-cli --with-pinentry --with-doc
 brew install libtool
-brew install lynx
+#brew install lynx
 brew install nmap
 brew install openssl
 #brew install p7zip
@@ -41,12 +41,13 @@ brew install tmux
 brew install tree
 brew install vim --override-system-vi
 brew install wget --with-iri
-brew install zsh
+#brew install zsh
 
 brew tap caskroom/cask
 #brew cask install alfred
 brew cask install atom
 brew cask install betterzipql
+brew cask install docker
 #brew cask install dash
 brew cask install google-chrome
 brew cask install iterm2
@@ -60,6 +61,8 @@ brew cask install macdown
 brew cask install spectacle
 brew cask install spotify
 brew cask install tunnelblick
+brew cask install vagrant
+brew cask install virtualbox
 brew cask install vlc
 
 # Remove outdated versions from the cellar
