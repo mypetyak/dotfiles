@@ -86,7 +86,7 @@ set undofile
 " Enable python-esque regex during search
 nnoremap / /\v
 vnoremap / /\v
-set gdefault
+"set gdefault
 set incsearch
 "set showmatch
 set hlsearch
