@@ -5,7 +5,7 @@
 
 brew update
 
-brew upgrade --all
+brew upgrade
 
 brew install automake
 brew install bash

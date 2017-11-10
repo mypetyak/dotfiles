@@ -9,14 +9,14 @@ elif [ "$unamestr" == 'Darwin' ]; then
    platform='osx'
 fi
 
-suffix=$(date -d "today" +"%Y%m%d%H%M")
+suffix=$(date +"%Y%m%d%H%M")
 
 # ----- VIM -----
-if [ -f ~/.vimrc ]; then
+if [ -e ~/.vimrc ]; then
     mv ~/.vimrc ~/.vimrc_${suffix}
 fi
-ln -s .vimrc ~/.vimrc
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+ln -s "$(pwd)/.vimrc" ~/.vimrc
+if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 vim +PluginInstall +qall
@@ -25,12 +25,13 @@ vim +GoInstallBinaries +qall
 # ----- GIT -----
 # TODO: this isn't idempotent
 printf "[include]\n    path = %s/.gitconfig_include" "$PWD" >> ~/.gitconfig
+ln -s "$(pwd)/.gitconfig_include" ~/.gitconfig_include
 
 # ----- TMUX -----
-if [ -f ~/.tmux.conf ]; then
+if [ -e ~/.tmux.conf ]; then
     mv ~/.tmux.conf ~/.tmux.confg_${suffix}
 fi
-ln -s .tmux.conf ~/.tmux.conf
+ln -s "$(pwd)/.tmux.conf" ~/.tmux.conf
 
 # ----- HOMEBREW -----
 if [ $platform == 'osx' ]; then
@@ -39,7 +40,7 @@ if [ $platform == 'osx' ]; then
 fi
 
 # ----- CHEAT -----
-if [ -d ~/.cheat ]; then
+if [ -e ~/.cheat ]; then
     mv ~/.cheat ~/.cheat_${suffix}
 fi
-ln -s .cheat ~/.cheat
+ln -s "$(pwd)/.cheat" ~/.cheat
