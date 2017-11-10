@@ -20,12 +20,20 @@ if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 vim +PluginInstall +qall
-vim +GoInstallBinaries +qall
 
 # ----- GIT -----
 # TODO: this isn't idempotent
 printf "[include]\n    path = %s/.gitconfig_include" "$PWD" >> ~/.gitconfig
+if [ -e ~/.gitconfig_include ]; then
+    mv ~/.gitconfig_include ~/.gitconfig_include_${suffix}
+fi
 ln -s "$(pwd)/.gitconfig_include" ~/.gitconfig_include
+
+# ----- BASH -----
+if [ -e ~/.bashrc ]; then
+    mv ~/.bashrc ~/.bashrc_${suffix}
+fi
+ln -s "$(pwd)/.bashrc" ~/.bashrc
 
 # ----- TMUX -----
 if [ -e ~/.tmux.conf ]; then
@@ -33,15 +41,20 @@ if [ -e ~/.tmux.conf ]; then
 fi
 ln -s "$(pwd)/.tmux.conf" ~/.tmux.conf
 
-# ----- HOMEBREW -----
+# ----- CHEAT -----
+if [ -e ~/.cheat ]; then
+    mv ~/.cheat ~/.cheat_${suffix}
+fi
+ln -s "$(pwd)/.cheat" ~/.cheat
+
+# ----- MACOS -----
 if [ $platform == 'osx' ]; then
 	./brew.sh
     ./iterm2.sh
     ./asst.sh
 fi
 
-# ----- CHEAT -----
-if [ -e ~/.cheat ]; then
-    mv ~/.cheat ~/.cheat_${suffix}
-fi
-ln -s "$(pwd)/.cheat" ~/.cheat
+# ----- GO -----
+command -v go &>/dev/null && {
+    vim +GoInstallBinaries +qall
+}
