@@ -37,6 +37,7 @@ ln -s "$(pwd)/.tmux.conf" ~/.tmux.conf
 if [ $platform == 'osx' ]; then
 	./brew.sh
     ./iterm2.sh
+    ./asst.sh
 fi
 
 # ----- CHEAT -----
