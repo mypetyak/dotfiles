@@ -16,17 +16,21 @@ Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'derekwyatt/vim-scala'
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-bufferline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sjl/gundo.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'rodjek/vim-puppet'
+Plugin 'mhinz/vim-signify'
 "Plugin 'severin-lemaignan/vim-minimap'
 "Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-eunuch'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'morhetz/gruvbox'
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required to enable Plugin-based indenting
@@ -45,11 +49,40 @@ syntax on
 set smartindent
 set autoindent
 
+" c++ indenting
+au BufNewFile,BufRead *.cpp set tabstop=2
+au BufNewFile,BufRead *.cpp set softtabstop=2
+au BufNewFile,BufRead *.cpp set shiftwidth=2
+au BufNewFile,BufRead *.cpp set expandtab
+au BufNewFile,BufRead *.cpp set autoindent
+au BufNewFile,BufRead *.cpp set fileformat=unix
+
 " Enable python-friendly indenting as default
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+au BufNewFile,BufRead *.py set tabstop=4
+au BufNewFile,BufRead *.py set softtabstop=4
+au BufNewFile,BufRead *.py set shiftwidth=4
+au BufNewFile,BufRead *.py set textwidth=79
+au BufNewFile,BufRead *.py set expandtab
+au BufNewFile,BufRead *.py set autoindent
+au BufNewFile,BufRead *.py set fileformat=unix
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoTo<CR>
+map <leader>gf  :YcmCompleter GoToImprecise<CR>
+map <leader>t  :YcmCompleter GetType<CR>
+" Default compiler flags hinter
+let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
 
 " vim-go settings
 let g:go_auto_type_info = 0
@@ -70,7 +103,8 @@ set wildmenu
 set wildmode=list:longest,full
 set visualbell
 set cursorline
-silent! colorscheme base16-eighties
+"silent! colorscheme base16-eighties
+silent! colorscheme gruvbox
 "silent! colorscheme base16-summerfruit-light
 "silent! colorscheme Tomorrow-Night-Eighties
 "silent! colorscheme base16-tomorrow-night
@@ -135,7 +169,8 @@ hi SpellBad cterm=underline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 "let g:airline_theme = 'base16_summerfruit'
-let g:airline_theme = 'base16_eighties'
+"let g:airline_theme = 'base16_eighties'
+let g:airline_theme = 'gruvbox'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 " Enable airline immediately
@@ -155,3 +190,6 @@ let g:go_highlight_fields = 1
 let g:go_highlight_methods = 1
 let g:go_fmt_command = "goimports"
 let g:go_autodetect_gopath = 0
+
+" signify plugin
+let g:signify_vcs_list = [ 'hg', 'git']
