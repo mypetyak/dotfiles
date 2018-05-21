@@ -18,7 +18,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-bufferline'
+"Plugin 'bling/vim-bufferline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sjl/gundo.vim'
 Plugin 'chriskempson/base16-vim'
@@ -27,13 +27,18 @@ Plugin 'rodjek/vim-puppet'
 "Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-eunuch'
+Plugin 'Valloric/YouCompleteMe'
+"Plugin 'junegunn/fzf.vim'
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required to enable Plugin-based indenting
 " Put non-Plugin stuff after this line
 
+let g:ycm_global_ycm_extra_conf = '/Users/bunn/.ycm_extra_conf.py'
 
 " ---- Native settings ----
+
+set rtp+=/usr/local/opt/fzf
 
 " Mouse scrolling
 set mouse=a

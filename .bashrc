@@ -1,11 +1,6 @@
-# vi mode stuff
-set -o vi
 # change ctrl+w behavior to erase up to the last non-word char
 bind 'set bind-tty-special-chars off'
 bind '"\C-w":backward-kill-word'
-
-# allow colorification in readline and others
-TERM=xterm-256color
 
 # some defaults
 export EDITOR=vim
@@ -24,7 +19,7 @@ alias tmux="export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock; tmux a || tmux"
 shopt -s histappend
 HISTFILESIZE=1000000
 HISTSIZE=1000000
-HISTCONTROL=ignoredups
+HISTCONTROL=ignoredups:erasedups
 #HISTIGNORE='ls:bg:fg:history'
 HISTTIMEFORMAT='%F %T '
 
@@ -93,3 +88,5 @@ alias gs='git status'
 # golang
 export GOPATH="$HOME/gocode"
 export PATH="$PATH:$GOPATH/bin"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
