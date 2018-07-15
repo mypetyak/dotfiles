@@ -31,6 +31,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'ambv/black'
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required to enable Plugin-based indenting
@@ -166,7 +167,9 @@ hi SpellBad cterm=underline
 " ----- Plugin Config -----
 
 "" Enable specific syntastic checkers
-"let g:syntastic_sh_checkers = ['shellcheck']
+let g:syntastic_sh_checkers = ['shellcheck']
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_cpp_checkers = ['gcc']
 
 " Enable airline
 let g:airline#extensions#tabline#enabled = 1
