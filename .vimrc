@@ -31,6 +31,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'integralist/vim-mypy'
 Plugin 'ambv/black'
 " All Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,6 +51,7 @@ syntax on
 " Helpful indenting
 set smartindent
 set autoindent
+set colorcolumn=80
 
 " c++ indenting
 au BufNewFile,BufRead *.cpp set tabstop=2
@@ -166,7 +168,7 @@ hi SpellBad cterm=underline
 
 "" Enable specific syntastic checkers
 let g:syntastic_sh_checkers = ['shellcheck']
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['flake8', 'mypy']
 "let g:syntastic_cpp_checkers = ['clang_check']
 "let g:ycm_show_diagnostics_ui = 0
 
