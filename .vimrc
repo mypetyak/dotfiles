@@ -37,8 +37,6 @@ call vundle#end()            " required
 filetype plugin indent on    " required to enable Plugin-based indenting
 " Put non-Plugin stuff after this line
 
-let g:ycm_global_ycm_extra_conf = '/Users/bunn/.ycm_extra_conf.py'
-
 " ---- Native settings ----
 
 set rtp+=/usr/local/opt/fzf
@@ -86,7 +84,7 @@ map <leader>g  :YcmCompleter GoTo<CR>
 map <leader>gf  :YcmCompleter GoToImprecise<CR>
 map <leader>t  :YcmCompleter GetType<CR>
 " Default compiler flags hinter
-let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " vim-go settings
 let g:go_auto_type_info = 0
@@ -169,7 +167,8 @@ hi SpellBad cterm=underline
 "" Enable specific syntastic checkers
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_cpp_checkers = ['gcc']
+"let g:syntastic_cpp_checkers = ['clang_check']
+"let g:ycm_show_diagnostics_ui = 0
 
 " Enable airline
 let g:airline#extensions#tabline#enabled = 1
