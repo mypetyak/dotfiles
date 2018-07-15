@@ -120,8 +120,8 @@ set undofile
 
 " Search enhancements
 " Enable python-esque regex during search
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
 "set gdefault
 set incsearch
 "set showmatch
