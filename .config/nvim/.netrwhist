@@ -1,4 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/bunn/.gnupg/private-keys-v1.d'
-let g:netrw_dirhist_2='/home/bunn/stuff-artiodactyl/rust'
