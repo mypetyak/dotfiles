@@ -3,7 +3,7 @@ bind 'set bind-tty-special-chars off'
 bind '"\C-w":backward-kill-word'
 
 # some defaults
-export EDITOR=vim
+export EDITOR=nvim
 
 # symlink the current ssh-agent auth socket to a common location, so that
 # we can find it later.
