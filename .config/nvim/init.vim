@@ -1,3 +1,10 @@
+" Install vim-plug if not installed
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
@@ -12,15 +19,15 @@ Plug 'tpope/vim-eunuch'
 Plug 'mhinz/vim-signify'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdcommenter'
-Plug 'integralist/vim-mypy'
+" Plug 'integralist/vim-mypy'
 Plug 'ambv/black'
 Plug 'rust-lang/rust.vim'
 " Initialize plugin system
 call plug#end()
 
 let g:rustfmt_command = '/home/bunn/.cargo/bin/rustfmt'
-let g:python3_host_prog = '/home/bunn/virtualenvs/foo/bin/python3'
-let g:black_virtualenv = '/home/bunn/virtualenvs/foo'
+let g:python3_host_prog = '/home/bunn/.virtualenvs/nvim/bin/python3'
+let g:black_virtualenv = '/home/bunn/.virtualenvs/nvim/'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -61,7 +68,7 @@ map <leader>gf  :YcmCompleter GoToImprecise<CR>
 map <leader>t  :YcmCompleter GetType<CR>
 " Default compiler flags hinter
 let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
-let g:ycm_path_to_python_interpreter = '/home/bunn/virtualenvs/foo/bin/python3'
+let g:ycm_path_to_python_interpreter = '/home/bunn/.virtualenvs/nvim/bin/python3'
 
 " Mouse scrolling
 set mouse=a
