@@ -21,6 +21,13 @@ if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
 fi
 vim +PluginInstall +qall
 
+# ----- NVIM -----
+if [ -e ~/.config/nvim/init.vim ]; then
+    mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim_${suffix}
+fi
+mkdir -p ~/.config/nvim
+ln -s "$(pwd)/.config/nvim/init.vim" ~/.config/nvim/init.vim
+
 # ----- GIT -----
 # TODO: this isn't idempotent
 printf "[include]\n    path = %s/.gitconfig_include" "$PWD" >> ~/.gitconfig
